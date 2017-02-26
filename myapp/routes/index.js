@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/admin', function(req, res){
-  res.render("admin");
+  res.render("admin",{message:req.flash('message')});
 });
 
 router.post('/admin', passport.authenticate('local-signin', {
