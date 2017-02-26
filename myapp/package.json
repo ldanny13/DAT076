@@ -2,6 +2,12 @@
   "name": "myapp",
   "version": "0.0.0",
   "private": true,
+  "contributors": [
+    "Johan Aronsson <johaaro@student.chalmers.se>",
+    "Philip Lu Chao <philipc@student.clamers.se> ",
+    "Danny Lam <ldanny@student.chalmers.se>",
+    "Anders Huynh <ahuynh@student.chalmers.se>"
+  ],
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -11,7 +17,7 @@
     "debug": "~2.6.0",
     "express": "~4.14.1",
     "morgan": "~1.7.0",
-    "pug": "~2.0.0-beta10",
+    "jquery": "^2.1.3",
     "serve-favicon": "~2.3.2",
     "mustache-express": "^1.2.2",
     "passport": "*",

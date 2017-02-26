@@ -22,7 +22,7 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/javascripts'));
+//app.use(express.static(__dirname + '/javascripts'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
