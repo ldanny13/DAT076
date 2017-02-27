@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render("menu");
 });
 
+router.get('/booking', function(req, res, next) {
+  res.render("booking");
+});
+
 router.get('/admin', function(req, res){
   res.render("admin",{message:req.flash('message')});
 });

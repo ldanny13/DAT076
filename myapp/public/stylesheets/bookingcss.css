@@ -1,0 +1,339 @@
+
+/* Typo */
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Varela|Oswald:400,700';
+
+/* Main */
+
+body {
+  background-color: #F4F4F4;
+}
+
+main {
+  width: 60%;
+  height: 667px;
+  margin: 40px auto 0 auto;
+  border: 1px solid #F4F4F4;
+  background-color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .2);
+  position: relative;
+}
+
+section {
+  width: 360px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+
+.navigation {
+  margin-top: 40px;
+  overflow: hidden;
+  height: 30px;
+}
+.back-to-home {
+  float: left;
+}
+.search {
+  float: right;
+}
+
+/* Restaurant */
+
+.restaurant div:nth-child(1) {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto;
+  border: 6px solid #474850;
+  border-radius: 50%;
+  background: url("http://res.cloudinary.com/duuczntv3/image/upload/v1487955334/54771_61225138_ms3nmk.jpg") no-repeat;
+  background-size: cover;
+  box-shadow: 0 5px 9px 0 rgba(71, 72, 80, .5);
+}
+.restaurant h1 {
+  padding: 0;
+  margin: 30px 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #64666F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+/* Number of tables to book */
+
+.number-of-tables {
+  text-align: center;
+  margin-top: 15px;
+}
+.number-of-tables h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: 'Varela', sans-serif;
+  font-size: 16px;
+  color: #707076
+}
+.number-of-tables div {
+  display: inline-block;
+}
+.counter {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  margin: 0 10px;
+  color: #5E606A;
+}
+.minus, .plus{
+  height: 72px;
+  width: 30px;
+  vertical-align: top;
+  position: relative;
+}
+
+.minus svg, .plus svg {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* Date and time */
+.date{
+  font-family: 'Varela', sans-serif;
+  font-size: 10px;
+  color: #707076;
+}
+
+.choose-date {
+  margin-top: 50px;
+
+}
+.choose-date h2, .choose-date div {
+  text-align: center;
+}
+.choose-date h2 {
+  font-family: 'Varela', sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #707076;
+}
+.choose-date h2 span {
+  font-family: "Verdana", sans-serif;
+}
+.choose-date div {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  word-spacing: 5px;
+  color: #5E606A;
+}
+.choose-date div span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+}
+
+/* Confirm */
+
+.confirm-book {
+  width: 255px;
+  height: 46px;
+  line-height: 46px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #474850;
+  color: #FFFFFF;
+  box-shadow: 0 12px 15px -9px rgba(71, 72, 80, .5);
+}
+
+/*name and nr*/
+body {
+  background-color: #edeff1;
+  font-family: "Montserrat";
+  font-weight: 300;
+  color: #34495e;
+  font-size: .9em;
+}
+
+h3 {
+  font-size: 1.98em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: 100;
+}
+
+.btn-primary {
+  box-shadow: 0;
+  border: none;
+  background-color: #48c9b0;
+  border-color: #48c9b0;
+  color: #ffffff;
+  outline: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transition: all .5s;
+  padding: 10px 19px;
+  font-size: 17px;
+  line-height: 1.471;
+  width: 30%;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: 1.44em;
+  margin-bottom: .55em;
+  display: inherit;
+}
+
+.btn-primary:hover {
+  background-color: #1ABC9C;
+}
+
+.form-group {
+  position: relative;
+  opacity: 1;
+  transition: .6s;
+}
+
+.input-field-icon {
+  color: #bfc9ca;
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  transition: .6s;
+}
+
+.form-control {
+  transition: opacity .6s;
+  opacity: 1;
+  border: 0;
+  border-bottom: 2px solid #bdc3c7;
+  border-radius: 0;
+  background: white;
+  font-size: 15px;
+  line-height: 1.467;
+  padding: 4px;
+  height: 42px;
+  -webkit-appearance: none;
+}
+
+input, textarea {
+  transition: all 800ms;
+  font-family: "Montserrat";
+  resize: none;  /* removes the resize handle */
+  overflow: auto; /* removes default scrolling bars in IE */
+  outline:none;
+  font-family:inherit;
+  box-sizing:border-box;
+  width: 200px;
+  padding: 0px 4px;
+  color: #34495e;
+  margin-top: 0px;
+}
+
+
+.has-success input, .has-success textarea {
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.has-success .input-field-icon {
+  color: #2ecc71;
+}
+
+
+input:focus, textarea:focus {
+  border-color: #48c9b0;
+  color: #34495e;
+}
+
+input:focus + .input-field-icon {
+  color: #34495e;
+}
+
+textarea.form-control {
+  height: 120px;
+  transition: .6s;
+}
+
+textarea.form-control:focus {
+  height: 200px;
+  border-color: #48c9b0;
+}
+
+.social {
+  display: block;
+  margin: auto;
+  width: 250px;
+}
+
+.social li {
+  display: inline-block;
+  list-style: none;
+  margin: auto;
+  margin-right: 10px;
+}
+
+.social li a {
+  display:block;
+  text-decoration: none;
+  color: #999;
+  border: 2px solid #999;
+  border-radius: 100%;
+  font-size: 26px;
+  width: 34px;
+  padding: 3px;
+  text-align: center;
+  transition: all .4s;
+}
+
+.social li a:hover {
+  background: #999;
+  color: white;
+}
+
+.social li a span {
+  margin-top: 4px;
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    margin-top: 12%;
+  }
+}
+
+/*something*/
+input {
+	font-size: 2.4em;
+	background-color: transparent;
+	text-align: center;
+	border-width: 0;
+	width: 50%;
+	margin: 0 0 .1em 0;
+	color: #34495e;
+}
+
+button {
+	/* basics */
+	color: transparent;
+	background-color: transparent;
+  border-color: transparent;
+}
+
+/*making  time and date side by  side*/
+
+.fieldBlock
+    {
+    display: block;
+    width: 50%;
+    float: left;
+    }

@@ -1,0 +1,86 @@
+
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/bookingcss.css"/>
+
+        <script type="text/javascript" src="script.js"></script>
+
+<script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+            } );
+        </script>
+        <script>
+            $( function() {
+                $( "#timepicker" ).timepicker();
+            } );
+        </script>
+<!-- TACK -->
+
+<body>
+  <main>
+    <!-- Navigation -->
+    <section class="navigation">
+      
+      <div class="search">
+        <!-- Search - object svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30" version="1.1">
+          </g></g>
+        </svg>
+      </div>
+    </section>
+    <!-- Picture and name of restaurant -->
+    <section class="restaurant">
+      <div></div>
+      <h1>Sushi Munkebäck</h1>
+    </section>
+    <!-- Number of tables to book -->
+
+<section class="number-of-tables">
+      <h2>Nr of guests</h2>
+        <!-- Minus - object svg -->
+      <button onClick="modify_qty(-1)" class="minus">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="5" viewBox="0 0 11 5" version="1.1">
+          <title>Minus</title>
+          <path d="M0 2.5C0 1.1 1.1 0 2.5 0L8.5 0C9.9 0 11 1.1 11 2.5 11 3.9 9.9 5 8.5 5L2.5 5C1.1 5 0 3.9 0 2.5L0 2.5Z" id="minus" fill="#5E606A"/>
+        </svg>
+        </button>
+
+
+<label for="qty"><abbr title="Quantity"></abbr></label>
+      <input id="qty" value="1"/>
+        <!-- Plus - object svg -->
+<button onclick="modify_qty(1)" class="plus">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="19" viewBox="0 0 19 19" version="1.1">
+          <title>Plus</title>
+          <path d="M7 7L2.5 7C1.1 7 0 8.1 0 9.5 0 10.9 1.1 12 2.5 12L7 12 7 16.5C7 17.9 8.1 19 9.5 19 10.9 19 12 17.9 12 16.5L12 12 16.5 12C17.9 12 19 10.9 19 9.5 19 8.1 17.9 7 16.5 7L12 7 12 2.5C12 1.1 10.9 0 9.5 0 8.1 0 7 1.1 7 2.5L7 7 7 7Z" id="plus" fill="#5E606A"/>
+        </svg>
+      </button>
+    </section>
+<!--  name and phonenr -->
+<center>
+          <div class="form-group">
+              <input type="text" class="form-control" value="" placeholder="Name" id="contact-name" />
+  </div></center>
+<center>
+            <div class="form-group">
+              <input type="nr" class="form-control" value="" placeholder="Phone number" id="contact-nr" />
+                <label class="input-field-icon icon-email" for="login-nr"></label></center>
+            </div>
+  </body>
+</html>
+
+    <!-- Date and time -->
+    <section class="choose-date">
+      <h2>Choose Date <span>&</span> Time</h2>
+      <div class="fieldBlock">
+      <input type="text" placeholder="MM/DD/YYYY" class="date" name="datepicker" id="datepicker" size="15"/></div>
+        <div class="fieldBlock"><input type="text" class="date" placeholder="HH:MM" name="timepicker" id="timepicker" size="15"/></div>
+    </section>
+    <!-- Confirm button -->
+    <section class="confirm-book">
+      <div>Book</div>
+    </section>
+  </main>
+</body>

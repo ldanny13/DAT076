@@ -1,10 +1,12 @@
 
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Varela|Oswald:400,700';
+
 body {
-	font-family: 'Sintony', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: #e5e5e5;
-	font-size: 12px;
-	background: #bfbfbf;
+	background: #F4F4F4;
 	line-height: 1;
+
 }
 *, *:before, *:after {
     box-sizing: border-box;
@@ -39,7 +41,7 @@ header h2 {
 	margin: 25px 10px;
 font-size: 28px;
 text-align: center;
-color: cornsilk;
+color: #444;
 }
 .container {
 	margin: 10px auto;
@@ -51,7 +53,7 @@ color: cornsilk;
 	content: "" clear : both;
 }
 nav.menu {
-	background: coral;
+	background: #2eb82e;
 	position: relative;
 	min-height: 45px;
 	height: 100%;
@@ -88,14 +90,14 @@ nav.menu {
 display:none;
 }
 .xs-menu-cont > a {
-    background: none repeat scroll 0 0 #ff7f50;
+    background: none repeat scroll 0 0 #669999;
     border-radius: 3px;
     padding: 3px 6px;
 	display: block;
-	border-bottom:1px solid #E67248;
-	    box-shadow: 0 1px 2px #e67248;
-		-webkit-box-shadow: 0 1px 2px #e67248;
-		-moz-box-shadow: 0 1px 2px #e67248;
+	border-bottom:1px solid #669999;
+	    box-shadow: 0 1px 2px #669999;
+		-webkit-box-shadow: 0 1px 2px #669999;
+		-moz-box-shadow: 0 1px 2px #669999;
 }
 .xs-menu-cont > a:hover{
  cursor: pointer;
@@ -105,7 +107,7 @@ display:none;
 color: #fff;
 padding: 14px 30px;
 border-bottom: 1px solid #ccc;
-background: #FF7F50;
+background: #2eb82e;
 
 }
 .xs-menu  a{
@@ -115,6 +117,7 @@ text-decoration:none;
 .mega-menu {
    background: none repeat scroll 0 0 #888;
     left: 0;
+		z-index: 1;
     margin-top: 0px;
     position: absolute;
     width: 100%;
@@ -170,7 +173,7 @@ margin-right:25px;
 		background:inherit !important;
 }
 .left-images > p {
-    background: none repeat scroll 0 0 #ff7f50;
+    background: none repeat scroll 0 0 #2eb82e;
     display: block;
     font-size: 18px;
     line-height: normal;
@@ -183,7 +186,7 @@ margin-right:25px;
     text-transform: uppercase;
 }
 .mm-view-more{
-	background: none repeat scroll 0 0 #ff7f50;
+	background: none repeat scroll 0 0 #2eb82e;
     color: #fff;
     display: inline !important;
     line-height: normal;
