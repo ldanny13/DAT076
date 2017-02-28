@@ -8,7 +8,7 @@
 	  <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="javascripts/script.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 <div class="container">
@@ -25,7 +25,10 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="#">Test</a>
+							<a href="#">Booking</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
 						</li>
 					</ul>
 				</nav>
@@ -62,6 +65,11 @@
 						</div>
 					</div>
 					<li>
+						<a href="/booklists" id="booklist">Booking</a>
+					</li>
+					<li>
+
+					<li>
 						<a target="_blank">Contact</a>
 					</li>
          <li style="float:right;">
@@ -70,6 +78,15 @@
 				</ul>
 			</nav>
 		</div>
+
+
+	<div id="booklists"></div>
+	<script>
+		$("#booklists").on("click", function(){
+			$("#booklists").load("booklists");
+		});
+	</script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
 </html>

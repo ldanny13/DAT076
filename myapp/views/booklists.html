@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+		  <link rel="stylesheet" type="text/css" href="stylesheets/bookinglist.css"/>
+</head>
+<div class="wrapper">
+  <div class="table">
+
+    <div class="row header">
+			<div class="cell">
+				Phone Number
+			</div>
+			<div class="cell">
+				Amount of seats
+			</div>
+			<div class="cell">
+				Date booked
+			</div>
+			<div class="cell">
+				Time booked
+			</div>
+			<div class="cell">
+				Name of booker
+			</div>
+			</div>
+	{{#bookinglist}}
+    <div class="row">
+			<div class="cell">
+      {{ phone }}
+      </div>
+      <div class="cell">
+      {{ seats }}
+      </div>
+      <div class="cell">
+      {{ bookingdate }}
+      </div>
+      <div class="cell">
+      {{bookingtime}}
+      </div>
+			<div class="cell">
+			{{ name }}
+			</div>
+    </div>
+		{{/bookinglist}}
+  </div>
+
+</html>

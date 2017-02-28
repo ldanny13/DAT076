@@ -2,7 +2,7 @@
 
 var Sequelize = require('sequelize');
 
-var sq = new Sequelize('restaurant_db','root','p1ratida', {
+var sq = new Sequelize('restaurant','admin','admin', {
   host :'localhost',
   dialect : 'mysql',
   define: {

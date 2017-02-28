@@ -11,6 +11,7 @@ var Local = require('passport-local');
 var flash = require("connect-flash");
 
 var index = require('./routes/index');
+var bookings = require('./routes/bookinglist');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/', index);
+app.use('/booklists',bookings);
 
 //require('./routes/index.js')(app,passport);
 

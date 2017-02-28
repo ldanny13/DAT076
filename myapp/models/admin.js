@@ -3,7 +3,7 @@ var Sequelize = require('sequelize');
 var sequelize = require('../Database/createdb.js');
 
 
-var Admins = sequelize.define('admins',
+var Admins = sequelize.define('Admins',
 {
   username :{
   type : Sequelize.STRING(100),
@@ -12,11 +12,9 @@ var Admins = sequelize.define('admins',
   password : Sequelize.STRING(100)
 })
 
+/*
 Admins.sync();
-
-/*var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null)});
-
-
-console.log("Created original admin");*/
-
+var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null)});
+console.log("Created original admin");
+*/
 module.exports = Admins;
