@@ -12,11 +12,11 @@ var Admins = sequelize.define('admins',
   password : Sequelize.STRING(100)
 })
 
-/*Admins.sync();
+Admins.sync();
 
-var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null)});
-*/
+/*var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null)});
 
-console.log("Created original admin");
+
+console.log("Created original admin");*/
 
 module.exports = Admins;
