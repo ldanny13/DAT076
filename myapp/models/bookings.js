@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize');
 var sequelize = require('../Database/createdb.js');
 
-// Create mapping between table and
-// model for a TodoNote
+// Create mapping between table and booking
+// model for a Bookings
 
 var Bookings = sequelize.define('Bookings',{
     phone: {
