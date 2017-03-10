@@ -82,12 +82,24 @@ section {
   font-size: 72px;
   margin: 0 10px;
   color: #5E606A;
-}
-.minus, .plus{
-  height: 72px;
+  }
+
+.minus{
+  height: 40px;
   width: 30px;
   vertical-align: top;
   position: relative;
+  padding-right: 6%
+  
+} 
+
+.plus{
+  height: 40px;
+  width: 30px;
+  vertical-align: top;
+  position: relative;
+  padding-left: 6%;
+  
 }
 
 .minus svg, .plus svg {
@@ -101,8 +113,9 @@ section {
 /* Date and time */
 .date{
   font-family: 'Varela', sans-serif;
-  font-size: 10px;
-  color: #707076;
+  font-size: 13px;
+  color: #000000;
+  text-align: center;
 }
 
 .choose-date {
@@ -135,10 +148,10 @@ section {
 }
 
 /* Confirm */
-
+/**
 .confirm-book {
   width: 255px;
-  height: 46px;
+  height: 45px;
   line-height: 46px;
   position: absolute;
   bottom: 40px;
@@ -146,12 +159,15 @@ section {
   transform: translateX(-50%);
   text-align: center;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
-  background-color: #474850;
-  color: #FFFFFF;
-  box-shadow: 0 12px 15px -9px rgba(71, 72, 80, .5);
+  border: 1px black;
+  background-color: black;
+  color: #000000;
+  padding-top: 1%;
+  box-shadow: 0 9px 9px -1px rgba(71, 72, 80, .5);
 }
+*/
 
 /*name and nr*/
 body {
@@ -202,9 +218,9 @@ h3 {
 
 .input-field-icon {
   color: #bfc9ca;
-  font-size: 18px;
+  font-size: 10px;
   position: absolute;
-  right: 10px;
+  right: 18px;
   bottom: 12px;
   transition: .6s;
 }
@@ -337,3 +353,39 @@ button {
     width: 50%;
     float: left;
     }
+
+  .nrofseats{
+     border-color: black;
+     width: 200px;
+     margin:auto;
+     text-align: center;
+     font-size: 14px;
+     padding-bottom: 2%;
+    }
+
+#bookbutton
+{ 
+  margin: auto;
+  padding-top: 8%;
+  text-align: center;
+}
+
+.btn{
+  font-size: 28px;
+  font-family: 'Varela', sans-serif;
+  border: 1px black;
+  background:black;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+  /*disabling scroll for inputs */
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button 
+{ 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

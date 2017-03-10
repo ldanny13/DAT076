@@ -2,7 +2,8 @@
 
 var Sequelize = require('sequelize');
 
-var sq = new Sequelize('restaurant','admin','admin', {
+                       //ex: Sequelize('database', 'username', 'password', {
+var sq = new Sequelize('restaurant','change to matching username in database','change to matching password for database', {
   host :'localhost',
   dialect : 'mysql',
   define: {
@@ -12,8 +13,6 @@ var sq = new Sequelize('restaurant','admin','admin', {
     max: 5,
     min: 0,
     idle: 10000
-
-
   }
 });
 

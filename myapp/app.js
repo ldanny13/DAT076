@@ -39,6 +39,36 @@ app.use(flash());
 app.use('/', index);
 app.use('/booklists',bookings);
 
+
+// Catch 404 and forward to error handler
+app.use(function(err, req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+})
+
+// Exception handling
+if (app.get('env') === 'development') {
+    console.log("In development mode");
+    app.use(function(err, req, res, next) {
+        console.log("Error:" + err.stack);
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+} else {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: {}
+        });
+    });
+}
+
+
 //require('./routes/index.js')(app,passport);
 
 
