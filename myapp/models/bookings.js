@@ -7,24 +7,37 @@ var sequelize = require('../Database/createdb.js');
 var Bookings = sequelize.define('Bookings',{
     phone: {
         type: Sequelize.STRING(11),
+        allowNull: false,
         primaryKey: true
+  
     },
     seats: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
     },
     bookingdate: {
-      type: Sequelize.STRING(11)
+      type: Sequelize.STRING(11),
+      allowNull: false,
     },
     bookingtime: {
-      type: Sequelize.STRING(5)
+      type: Sequelize.STRING(5),
+      allowNull: false
     },
     name:{
-      type: Sequelize.TEXT
+      type: Sequelize.TEXT,
+      allowNull: false,
     }
 },
 {
   //freezeTableName: true // Model tableName will be the same as the model name
   timestamps: false
 });
-// TODO
+
+/** creating table bookings if not exist */
+
+
+//Bookings.sync({ force: true });
+
+
+
 module.exports = Bookings;

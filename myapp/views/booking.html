@@ -12,12 +12,26 @@
             } );
         </script>
 
+
         <script>
             $(function() {
                 //$( "#timepicker" ).timepicker();
                 $('#timepicker').timepicker({ timeFormat: 'HH:mm',});
             } );
         </script>
+
+      <!--disable scrolling total -->
+        <script>
+          $(function(){
+         $(':input[type=number]').on('mousewheel',function(e){ $(this).blur(); });
+        });
+          </script>
+
+          <script>
+              function bookingconfirmed() {alert("You have booked!");}
+          </script>
+
+
 <!-- TACK -->
 
 <body>
@@ -49,9 +63,9 @@
         </svg>
         </button>
 
-
-<label for="qty"><abbr title="Quantity"></abbr></label>
-      <input id="qty" value="1"/>
+<label for="image-middle">
+       <img src="http://res.cloudinary.com/dlreserv1/image/upload/c_scale,h_36,w_42/v1489033655/icon-ios7-people-128_ccc7qk.png" alt="chairs" id="chair" style="padding-bottom:2%; padding-left:2%; padding-right:2%; vertical-align: middle"/>
+</label>
         <!-- Plus - object svg -->
 <button onclick="modify_qty(1)" class="plus">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="19" viewBox="0 0 19 19" version="1.1">
@@ -60,29 +74,50 @@
         </svg>
       </button>
     </section>
+
+<form action="booklists/addbooking" method="POST" name="bookform" onsubmit="return validateBooking()">
+
+<fieldset class="nrofseats">
+      <label for="qty">
+  <abbr title="Quantity"></abbr>
+       <input type="number" id="qty" value="1" min="1" name="seats"/>
+  </label>
+</fieldset>
+
+  </fieldset>
 <!--  name and phonenr -->
 <center>
+  <fieldset>
           <div class="form-group">
-              <input type="text" class="form-control" value="" placeholder="Name" id="contact-name" />
+              <input type="text" class="form-control" value="" placeholder="Name" id="contactname" name="contactname" />
   </div></center>
 <center>
             <div class="form-group">
-              <input type="nr" class="form-control" value="" placeholder="Phone number" id="contact-nr" />
-                <label class="input-field-icon icon-email" for="login-nr"></label></center>
-            </div>
+              <input type="number" class="form-control" value="" placeholder="Phone number" id="contactnr" name="contactnr" />
+          <fieldset>
+                <label class="input-field-icon icon-email" for="login-nr"></label></center>   
+            </div> 
   </body>
+  </fieldset>
 </html>
 
+<fieldset
     <!-- Date and time -->
     <section class="choose-date">
       <h2>Choose Date <span>&</span> Time</h2>
       <div class="fieldBlock">
       <input type="text" placeholder="MM/DD/YYYY" class="date" name="datepicker" id="datepicker" size="15"/></div>
-        <div class="fieldBlock"><input type="text" class="date" placeholder="HH:MM" name="timepicker" id="timepicker" size="15"/></div>
+        <div class="fieldBlock"> <input type="text" class="date" placeholder="HH:MM" name="timepicker" id="timepicker" size="15"/></div>
     </section>
     <!-- Confirm button -->
     <section class="confirm-book">
-      <div>Book</div>
+      <div id="bookbutton">
+      <input class="btn" type="submit" name="submit" value="Book" id="btnbook">
+      </div>
     </section>
+    
+</fieldset>
+</form>
+
   </main>
 </body>

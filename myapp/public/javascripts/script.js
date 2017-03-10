@@ -33,3 +33,18 @@
          document.getElementById('qty').value = new_qty;
          return new_qty;
      }
+
+/** Validate booking */
+
+function validateBooking() {
+    var name = document.forms["bookform"]["contactname"].value;
+    var phone = document.forms["bookform"]["contactnr"].value;
+    var seats = document.forms["bookform"]["seats"].value;
+    var bookingdate = document.forms["bookform"]["datepicker"].value;
+    var bookingtime = document.forms["bookform"]["timepicker"].value;
+
+    if (name == "" || phone =="" || seats =="" || bookingdate == "" || bookingtime == "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+}
