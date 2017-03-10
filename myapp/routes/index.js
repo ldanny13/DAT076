@@ -2,6 +2,11 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 var Local = require('passport-local');
+var Book = require('./bookinglist.js');
+
+/** using bookinglist and its methods */
+router.use('/booklists', Book);
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/booking', function(req, res, next) {
   res.render("booking");
 });
+
 
 router.get('/admin', function(req, res){
   res.render("admin",{message:req.flash('message')});

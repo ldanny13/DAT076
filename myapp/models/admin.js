@@ -10,16 +10,16 @@ var Admins = sequelize.define('admins',
   unique: true
 },
   password : Sequelize.STRING(100),
- type: {
-  type : Sequelize.STRING(100),
-  defaultValue: "employee"
-  }
+  type: {
+   type : Sequelize.STRING(100),
+   defaultValue: "employee"
+   }
 })
 
 
 Admins.sync();
 
-//var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null), type : "owner"});
+var admins = Admins.create({username: "test", password: bcrypt.hashSync("test",null,null)});
 
 
 console.log("Created original admin");
