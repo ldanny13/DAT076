@@ -21,6 +21,10 @@ router.get('/lunch', function(req, res, next) {
   res.render("lunch");
 });
 
+router.get('/alacarte', function(req, res, next) {
+  res.render("alacarte");
+});
+
 router.get('/information', function(req, res, next) {
   res.render("information");
 });
