@@ -30,11 +30,26 @@ router.get('/admin', function(req, res){
 });
 
 router.post('/admin', passport.authenticate('local-signin', {
-    successRedirect: '/admin-page',
     failureRedirect: '/admin',
     failureFlash: true
-  })
+  }), (req, res) => {
+    if(req.user.type === "employee") {
+      res.redirect('/');
+    } else {
+      res.redirect('/admin-page');
+    }
+  }
 );
+
+router.get('/userCreation', function(req, res) {
+  res.render("userCreation", { message: req.flash('message') });
+});
+
+router.post('/userCreation', passport.authenticate('local-signup', {
+  successRedirect: '/admin-page',
+  failureRedirect: '/userCreation',
+  failureFlash: true
+}));
 
 router.get('/admin-page', checkLoggedIn, function(req, res) {
     res.render("admin-page");
