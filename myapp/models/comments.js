@@ -22,7 +22,7 @@ var Comments = sequelize.define('Comments',{
   timestamps: false
 });
 
-//Comments.sync();
+Comments.sync();
 
 
 module.exports = Comments;

@@ -18,8 +18,8 @@ router.get('/booking', function(req, res, next) {
   res.render("booking");
 });
 router.get('/comments', function(req, res, next) {
+
   Comments.findAll().then(function(comments){
-    console.log(comments);
     res.render('comments',{
       comments:comments
     });
@@ -43,8 +43,20 @@ router.get('/admin', function(req, res){
 });
 
 router.post('/add', function(req, res, next){
-  Comments.build({name: req.body.commentname, content: req.body.content, date : Date.now()}).save().then(function(){
-    res.redirect("comments");
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+
+  var yyyy = today.getFullYear();
+  if(dd<10){
+      dd='0'+dd;
+    }
+    if(mm<10){
+      mm='0'+mm;
+    }
+    var today = dd+'/'+mm+'/'+yyyy;
+  Comments.build({name: req.body.name, content: req.body.content, date : today}).save().then(function(){
+    res.redirect("/");
   }).catch(function(error){
     console.log(error);
   })
