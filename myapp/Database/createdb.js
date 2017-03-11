@@ -3,7 +3,7 @@
 var Sequelize = require('sequelize');
 
                        //ex: Sequelize('database', 'username', 'password', {
-var sq = new Sequelize('restaurant','change to matching username in database','change to matching password for database', {
+var sq = new Sequelize('restaurant','admin','admin', {
   host :'localhost',
   dialect : 'mysql',
   define: {

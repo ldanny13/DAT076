@@ -48,3 +48,19 @@ function validateBooking() {
         return false;
     }
 }
+
+//script for map
+function myMap(){
+  var myLatLng = {lat: 57.72206, lng: 12.02604};
+  var mapOptions = {
+    center: new google.maps.LatLng(57.72206, 12.02604),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.roadmap
+  }
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map
+  });
+}

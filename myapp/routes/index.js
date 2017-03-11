@@ -17,6 +17,13 @@ router.get('/booking', function(req, res, next) {
   res.render("booking");
 });
 
+router.get('/lunch', function(req, res, next) {
+  res.render("lunch");
+});
+
+router.get('/information', function(req, res, next) {
+  res.render("information");
+});
 
 router.get('/admin', function(req, res){
   res.render("admin",{message:req.flash('message')});

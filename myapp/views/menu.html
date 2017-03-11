@@ -44,7 +44,7 @@
 								<span class="categories-list">
 							<ul>
 							<span>Lunch</span>
-								<li><a class="mm-view-more" href="#">View more →</a></li>
+								<li><a id="lunch"class="mm-view-more" href="#">View more →</a></li>
 							</ul>
 						</span>
 
@@ -66,14 +66,14 @@
 						<a href="#" id="book">Booking</a>
 					</li>
 					<li>
-						<a target="_blank">Contact</a>
+						<a id="contact">Contact</a>
 					</li>
          <li style="float:right;">
           </li>
 				</ul>
 			</nav>
 		</div>
-		<div id="bookingPage"></div>
+		<div id="extraPage"></div>
 <!-- SCRIPTS -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -82,7 +82,19 @@
 
 <script>
 	$("#book").on("click", function(){
-		$("#bookingPage").load("booking");
+		$("#extraPage").load("booking");
+	});
+</script>
+
+<script>
+	$("#lunch").on("click", function(){
+		$("#extraPage").load("lunch");
+	});
+</script>
+
+<script>
+	$("#contact").on("click", function(){
+		$("#extraPage").load("information");
 	});
 </script>
 
