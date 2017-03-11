@@ -11,19 +11,19 @@ router.use('/booklists', Book);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    Comments.findAll().then(function(comments){
-      console.log(comments);
-      res.render('menu',{
-        comments:comments
-      });
-    });
-});
-
-router.get('/', function(req, res, next) {
   res.render("menu");
 });
+
 router.get('/booking', function(req, res, next) {
   res.render("booking");
+});
+router.get('/comments', function(req, res, next) {
+  Comments.findAll().then(function(comments){
+    console.log(comments);
+    res.render('comments',{
+      comments:comments
+    });
+  });
 });
 
 router.get('/lunch', function(req, res, next) {
@@ -44,7 +44,7 @@ router.get('/admin', function(req, res){
 
 router.post('/add', function(req, res, next){
   Comments.build({name: req.body.commentname, content: req.body.content, date : Date.now()}).save().then(function(){
-    res.redirect("/");
+    res.redirect("comments");
   }).catch(function(error){
     console.log(error);
   })
