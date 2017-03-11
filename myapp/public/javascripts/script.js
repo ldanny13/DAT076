@@ -64,3 +64,7 @@ function myMap(){
     map: map
   });
 }
+
+function home(){
+       		$("#extraPage").load("comments");
+ }

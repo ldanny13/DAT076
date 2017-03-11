@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/box.css"/>
+</head>
+
+<body>
+<div class="detailBox">
+	<div class="titleBox">
+		<label>Comment Box</label>
+
+	</div>
+	<div class ="commentBox">
+		<span>★</span>
+		<span>★</span>
+		<span>★</span>
+		<span>★</span>
+		<span>★</span>
+	</div>
+	<div class="actionBox">
+		<ul class="commentList">
+			<li>
+
+				<div class="commentText">
+
+					{{#comments}}
+<div class="test">
+					<p>Name: {{ name }}</p>
+					<p>Comment:{{ content }}</p>
+					<p class="last">Date:{{ date }}</P>
+					{{/comments}}
+</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+<form action="/add" method="post">
+	 <table>
+		 <tr>
+			 <input  id="name" type="text" placeholder="name" name="name" />
+			 <textarea  id="content" rows="3" cols="30" placeholder="your comment..." name="content" ></textarea>
+		 </tr>
+		 <tr>
+			 <td><input type="submit" name="add" value="Add" /></td>
+		 </tr>
+	 </table>
+ </form>
+</div>
+</body>
+</html>

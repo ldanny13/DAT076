@@ -3,6 +3,7 @@ var passport = require('passport');
 var router = express.Router();
 var Local = require('passport-local');
 var Book = require('./bookinglist.js');
+var Comments = require('../models/comments.js')
 
 /** using bookinglist and its methods */
 router.use('/booklists', Book);
@@ -10,9 +11,17 @@ router.use('/booklists', Book);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render("menu");
+    Comments.findAll().then(function(comments){
+      console.log(comments);
+      res.render('menu',{
+        comments:comments
+      });
+    });
 });
 
+router.get('/', function(req, res, next) {
+  res.render("menu");
+});
 router.get('/booking', function(req, res, next) {
   res.render("booking");
 });
@@ -33,6 +42,13 @@ router.get('/admin', function(req, res){
   res.render("admin",{message:req.flash('message')});
 });
 
+router.post('/add', function(req, res, next){
+  Comments.build({name: req.body.commentname, content: req.body.content, date : Date.now()}).save().then(function(){
+    res.redirect("/");
+  }).catch(function(error){
+    console.log(error);
+  })
+});
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
     failureFlash: true
