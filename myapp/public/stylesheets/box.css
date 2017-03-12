@@ -15,10 +15,11 @@
 .detailBox {
     width:320px;
     border:1px solid #bbb;
-    margin:50px;
-    position:absolute;
+    margin-top: -395px;
+    position:relative;
     bottom:0;
     right:0;
+    float: right;
 
 }
 .titleBox {
