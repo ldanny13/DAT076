@@ -1,16 +1,23 @@
-var bcrypt = require('bcrypt-nodejs');
 var Sequelize = require('sequelize');
 var sequelize = require('../Database/createdb.js');
 
-
-var Employees = sequelize.define('admins',
+var Employees = sequelize.define('Employees',
 {
-  username :{
-  type : Sequelize.STRING(100),
-  unique: true
-},
-  password : Sequelize.STRING(100)
-})
+  employeename :{
+    type: Sequelize.STRING(100)
+  },
+  pnr :{
+    type: Sequelize.STRING(12),
+    primaryKey: true,
+    uniqe: true
+  },
+   status : {
+    type : Sequelize.STRING(100),
+    defaultValue: "employee"
+  }
+});
+
+//var employees = Employees.create({employeename: "test", pnr: "199506065995", employeestatus: "owner"});
 
 //Employees.sync();
 

@@ -4,6 +4,9 @@ var router = express.Router();
 var Local = require('passport-local');
 var Book = require('./bookinglist.js');
 var Comments = require('../models/comments.js')
+var Employees = require('../models/employees.js')
+var News = require('../models/news.js')
+var Relations = require('../models/relations.js')
 
 /** using bookinglist and its methods */
 router.use('/booklists', Book);
@@ -61,11 +64,12 @@ router.post('/add', function(req, res, next){
     console.log(error);
   })
 });
+
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
     failureFlash: true
   }), (req, res) => {
-    if(req.user.type === "employee") {
+    if(req.user.status === "employee") {
       res.redirect('/');
     } else {
       res.redirect('/admin-page');

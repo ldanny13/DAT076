@@ -1,7 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt-nodejs');
-var admin = require('../models/admin.js');
-var employee = require('../models/admin.js');
+var admin = require('../models/logins.js');
 
 module.exports = function(passport){
 

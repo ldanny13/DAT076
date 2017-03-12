@@ -9,6 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 var Local = require('passport-local');
 var flash = require("connect-flash");
+var relations = require("./models/relations.js");
 
 var index = require('./routes/index');
 var bookings = require('./routes/bookinglist');

@@ -9,7 +9,7 @@ var Bookings = sequelize.define('Bookings',{
         type: Sequelize.STRING(11),
         allowNull: false,
         primaryKey: true
-  
+
     },
     seats: {
         type: Sequelize.INTEGER,
@@ -36,7 +36,7 @@ var Bookings = sequelize.define('Bookings',{
 /** creating table bookings if not exist */
 
 
-//Bookings.sync({ force: true });
+Bookings.sync({ force: true });
 
 
 
