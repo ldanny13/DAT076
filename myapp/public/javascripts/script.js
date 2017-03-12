@@ -47,6 +47,10 @@ function validateBooking() {
         alert("All fields must be filled out");
         return false;
     }
+    else if(phone.length > 11 || phone.length < 11) {
+      alert("Phone number must be exactly 11 numbers , example 0721271212");
+      return false;
+    }
 }
 
 //script for map
