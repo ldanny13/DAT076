@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/booking', function(req, res, next) {
   res.render("booking");
 });
+
 router.get('/comments', function(req, res, next) {
 
   Comments.findAll().then(function(comments){
@@ -67,7 +68,6 @@ router.post('/add', function(req, res, next){
 });
 
 /*Routes for user authentication and creation */
-
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
     failureFlash: true,
@@ -88,7 +88,7 @@ router.post('/userCreation', passport.authenticate('local-signup', {
   successRedirect: '/userCreation',
   failureRedirect: '/userCreation',
   failureFlash: true,
-  successFlash: "true"
+  successFlash: true
 }));
 
 router.get('/admin-page', checkAdminLoggedIn, function(req, res) {
@@ -110,7 +110,7 @@ function checkAdminLoggedIn(req, res, next) {
 }
 
 function checkLoggedIn(req, res, next) {
-  if(req.isAuthenticated)
+  if(req.isAuthenticated())
     return next();
   res.redirect('/');
 }
