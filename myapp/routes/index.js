@@ -68,26 +68,6 @@ router.post('/add', function(req, res, next){
   })
 });
 
-router.post('/addnews', function(req, res, next){
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1; //January is 0!
-
-  var yyyy = today.getFullYear();
-  if(dd<10){
-      dd='0'+dd;
-    }
-    if(mm<10){
-      mm='0'+mm;
-    }
-    var today = dd+'/'+mm+'/'+yyyy;
-  Comments.build({name: req.body.name, content: req.body.content, date : today}).save().then(function(){
-    res.redirect("/newsfeed");
-  }).catch(function(error){
-    console.log(error);
-  })
-});
-
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
     failureFlash: true
