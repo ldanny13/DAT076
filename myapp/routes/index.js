@@ -4,10 +4,6 @@ var router = express.Router();
 var Local = require('passport-local');
 var Book = require('./bookinglist.js');
 var Comments = require('../models/comments.js')
-var Employees = require('../models/employees.js')
-var News = require('../models/news.js')
-var Relations = require('../models/relations.js')
-
 
 /** using bookinglist and its methods */
 router.use('/booklists', Book);
@@ -35,7 +31,7 @@ router.get('/lunch', function(req, res, next) {
   res.render("lunch");
 });
 
-router.get('/newsfeed', function(req, res, next) {
+router.get('/newsfeed', checkLoggedIn, function(req, res, next) {
   res.render("newsfeed");
 });
 
@@ -65,7 +61,7 @@ router.post('/add', function(req, res, next){
     }
     var today = dd+'/'+mm+'/'+yyyy;
   Comments.build({name: req.body.name, content: req.body.content,rating: rate, date: today}).save().then(function(){
-    res.redirect("/");
+    res.redirect("/ ");
   }).catch(function(error){
     console.log(error);
   })
@@ -73,24 +69,25 @@ router.post('/add', function(req, res, next){
 
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
-    failureFlash: true
+    failureFlash: true,
   }), (req, res) => {
     if(req.user.status === "employee") {
-      res.redirect('/');
+      res.redirect('/newsfeed');
     } else {
       res.redirect('/admin-page');
     }
   }
 );
 
-router.get('/userCreation', function(req, res) {
+router.get('/userCreation', checkLoggedIn, function(req, res) {
   res.render("userCreation", { message: req.flash('message') });
 });
 
 router.post('/userCreation', passport.authenticate('local-signup', {
-  successRedirect: '/admin-page',
+  successRedirect: '/userCreation',
   failureRedirect: '/userCreation',
-  failureFlash: true
+  failureFlash: true,
+  successFlash: "true"
 }));
 
 router.get('/admin-page', checkLoggedIn, function(req, res) {

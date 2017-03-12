@@ -16,6 +16,9 @@ var Logins = sequelize.define('Logins',
     type : Sequelize.STRING(100),
     defaultValue : "employee"
   }
+  //Used to creat association between login and employees
+  //Was not finished due to time constraints.
+
   /*status : {
     type : Sequelize.STRING(100),
     references: {
@@ -25,7 +28,9 @@ var Logins = sequelize.define('Logins',
   }*/
 });
 
-//Logins.sync();
+Logins.sync();
+
+//var admins = Logins.create({username: "test", password: bcrypt.hashSync("test",null,null), status: "owner"});
 
 console.log("Created original admin");
 

@@ -1,3 +1,6 @@
+//Creates a model for employeers, not currently in use
+//since assoicationas weren't entierly finished
+
 var Sequelize = require('sequelize');
 var sequelize = require('../Database/createdb.js');
 
