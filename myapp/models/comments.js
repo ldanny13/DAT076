@@ -24,5 +24,6 @@ var Comments = sequelize.define('Comments',{
 
 Comments.sync();
 
+var comments = Comments.create({name:"Anders Huynh", content: "hej på dig", date: "11/03/2017" });
 
 module.exports = Comments;

@@ -3,40 +3,60 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="stylesheets/box.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/rating.css"/>
 </head>
 
 <body>
+	<center>
+	<div class="homePage">
+			<p>Välkommen till Sushi Munkebäck</p>
+			<img src="../../images/sushi.jpg"/>
+		</div>
+	</center>
 <div class="detailBox">
 	<div class="titleBox">
 		<label>Comment Box</label>
 
 	</div>
 	<div class ="commentBox">
-		<span>★</span>
-		<span>★</span>
-		<span>★</span>
-		<span>★</span>
-		<span>★</span>
 	</div>
 	<div class="actionBox">
 		<ul class="commentList">
 			<li>
-
+					<p id="average"></p>
 				<div class="commentText">
 
 					{{#comments}}
 					<div class="test">
 					<p>Name: {{ name }}</p>
 					<p>Comment:{{ content }}</p>
+					<p>Rating:{{ rating }}</p>
 					<p class="last">Date:{{ date }}</P>
 					{{/comments}}
+
 				</div>
 				</div>
 			</li>
 		</ul>
 	</div>
-<form action="/add" method="post">
+<form action="/add"  method="post">
 	 <table>
+
+    <form>
+        <div class="rating">
+            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+            <label for="star5">☆</label>
+            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+            <label for="star4">☆</label>
+            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+            <label for="star3">☆</label>
+            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+            <label for="star2">☆</label>
+            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+            <label for="star1">☆</label>
+            <div class="clear"></div>
+        </div>
+    </form>
 		 <tr>
 			 <input  id="name" type="text" placeholder="name" name="name" />
 			 <textarea  id="content" rows="3" cols="30" placeholder="your comment..." name="content" ></textarea>
