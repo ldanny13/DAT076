@@ -8,8 +8,7 @@ var Comments = require('../models/comments.js')
 /** using bookinglist and its methods */
 router.use('/booklists', Book);
 
-
-/* GET home page. */
+/* routes to render views on user interaction */
 router.get('/', function(req, res, next) {
   res.render("menu");
 });
@@ -21,7 +20,6 @@ router.get('/comments', function(req, res, next) {
 
   Comments.findAll().then(function(comments){
     res.render('comments',{
-
       comments:comments
     });
   });
@@ -47,6 +45,7 @@ router.get('/admin', function(req, res){
   res.render("admin",{message:req.flash('message')});
 });
 
+/*Adds a comment to the comment window*/
 router.post('/add', function(req, res, next){
   var today = new Date();
   var dd = today.getDate();
@@ -61,11 +60,13 @@ router.post('/add', function(req, res, next){
     }
     var today = dd+'/'+mm+'/'+yyyy;
   Comments.build({name: req.body.name, content: req.body.content,rating: rate, date: today}).save().then(function(){
-    res.redirect("/ ");
+    res.redirect("/");
   }).catch(function(error){
     console.log(error);
   })
 });
+
+/*Routes for user authentication and creation */
 
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
@@ -90,7 +91,7 @@ router.post('/userCreation', passport.authenticate('local-signup', {
   successFlash: "true"
 }));
 
-router.get('/admin-page', checkLoggedIn, function(req, res) {
+router.get('/admin-page', checkAdminLoggedIn, function(req, res) {
     res.render("admin-page");
 });
 
@@ -99,8 +100,17 @@ router.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
+/*Used to ensure that we are logged into a page
+checkAdminLoggedIn makes sure we are an admin
+checkLoggedIn just checks if we are a user*/
+function checkAdminLoggedIn(req, res, next) {
+  if(req.user.status === "owner")
+    return next();
+  res.redirect('/');
+}
+
 function checkLoggedIn(req, res, next) {
-  if(req.isAuthenticated())
+  if(req.isAuthenticated)
     return next();
   res.redirect('/');
 }

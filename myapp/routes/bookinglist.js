@@ -14,19 +14,18 @@ router.get('/', function(req, res, next) {
     });
 });
 
-
 /**
- * add booking into database 
+ * add booking into database
  */
 router.post('/addbooking', function(req, res, next) {
   Booking.build(
     {
-      phone: req.body.contactnr, 
+      phone: req.body.contactnr,
       seats: req.body.seats,
       bookingdate: req.body.datepicker,
       bookingtime: req.body.timepicker,
       name: req.body.contactname
-      
+
   }
     ).save().then(function() {
             res.redirect("/");
