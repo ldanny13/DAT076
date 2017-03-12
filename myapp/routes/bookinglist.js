@@ -39,7 +39,4 @@ router.post('/addbooking', function(req, res, next) {
   })
 });
 
-
-
-
 module.exports = router;
