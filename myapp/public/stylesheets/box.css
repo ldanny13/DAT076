@@ -1,4 +1,17 @@
-
+.homePage{
+  width: 500px;
+  align-content: center;
+}
+.homePage p{
+  text-align: center;
+  font-family: Courier;
+  color: black;
+  font-size:40px;
+}
+.homePage img{
+  width:540px; /* you can use % */
+  height: 500px;
+}
 .detailBox {
     width:320px;
     border:1px solid #bbb;
