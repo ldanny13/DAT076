@@ -32,6 +32,10 @@ router.get('/lunch', function(req, res, next) {
   res.render("lunch");
 });
 
+router.get('/newsfeed', function(req, res, next) {
+  res.render("newsfeed");
+});
+
 router.get('/alacarte', function(req, res, next) {
   res.render("alacarte");
 });
@@ -63,6 +67,7 @@ router.post('/add', function(req, res, next){
     console.log(error);
   })
 });
+
 router.post('/admin', passport.authenticate('local-signin', {
     failureRedirect: '/admin',
     failureFlash: true
