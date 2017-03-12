@@ -5,6 +5,7 @@ var Local = require('passport-local');
 var Book = require('./bookinglist.js');
 var Comments = require('../models/comments.js')
 
+
 /** using bookinglist and its methods */
 router.use('/booklists', Book);
 
@@ -21,6 +22,7 @@ router.get('/comments', function(req, res, next) {
 
   Comments.findAll().then(function(comments){
     res.render('comments',{
+
       comments:comments
     });
   });
@@ -46,7 +48,7 @@ router.post('/add', function(req, res, next){
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1; //January is 0!
-
+  var rate = parseInt(req.body.star);
   var yyyy = today.getFullYear();
   if(dd<10){
       dd='0'+dd;
@@ -55,7 +57,7 @@ router.post('/add', function(req, res, next){
       mm='0'+mm;
     }
     var today = dd+'/'+mm+'/'+yyyy;
-  Comments.build({name: req.body.name, content: req.body.content, date : today}).save().then(function(){
+  Comments.build({name: req.body.name, content: req.body.content,rating: rate, date: today}).save().then(function(){
     res.redirect("/");
   }).catch(function(error){
     console.log(error);
