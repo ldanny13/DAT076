@@ -253,3 +253,14 @@ margin-left: 5px;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+
+.usercreate{
+	padding-top: 20px;
+	background: #F4F4F4;
+	color: #444;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.needacc{
+	color: #444;
+}
