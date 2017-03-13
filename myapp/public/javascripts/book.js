@@ -18,4 +18,4 @@ $(function(){
   $(':input[type=number]').on('mousewheel',function(e){ $(this).blur(); });
 });
 
-function bookingconfirmed() {alert("Thank You for booking!");}
+function bookingconfirmed() {alert("Thank you for booking!");}

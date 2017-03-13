@@ -3,15 +3,15 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/bookinglist.css"/>
-<!--scripts -->
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js" async></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" async></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/css/dataTables.jqueryui.min.css" async> </script>
-	<script type="text/javascript" src="javascripts/sorttable.js" async></script>
-
+    <!--scripts -->
+	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script> 
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="javascripts/sorttable.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/css/dataTables.jqueryui.min.css"> </script>
+<!-- end of script  -->
 
 <div id ="header1">
 	<h1> List of all Bookings </h1>
@@ -19,11 +19,12 @@
 </head>
 <body>
     <button class ="buttonback" onclick="goBack()">Go Back</button>
-            <!--<form action = "booklists/delete" method="POST"> -->
-            <!--<input type="hidden" name="id" value="{{bookinglists.phone}}" />
-            <button class ="deletbtn" id="deletebtn"> delete </button>
-            </form> -->
-<table id="booktablelist" class="display" cellspacing="0" width="100%">
+   <!-- <form action="booklists/delete" method="POST">
+    <input type="hidden" name="id" value="{{phone}}"> -->
+
+  <button class ="deletebtn" id="deletebtn"> Delete </button>
+
+    <table id="booktablelist" class="display" cellspacing="0" width="100%">
         <thead>
               	<th>Customer name</th>
                 <th>Customer phone number</th>
@@ -43,24 +44,23 @@
         </tfoot>
         <tbody>
             		{{#bookinglist}}
-						<tr>
+			<tr>
                 <td>{{name}}</td>
                 <td>{{phone}}</td>
                 <td>{{bookingdate}}</td>
                 <td>{{bookingtime}}</td>
                 <td>{{seats}}</td>
-            </tr>
-			{{/bookinglist}}
-        </tbody>
+			</tr>
+            	{{/bookinglist}}
+     </tbody>
     </table>
-		</body>
+<!---</form> -->	
+    	</body>
 
 <!-- script for going back to admin page -->
 <script>
 function goBack() {
-		window.history.back("/admin-page");
+    window.history.back("/admin-page");
 }
 </script>
-<!-- end of script  -->
-
 </html>
