@@ -15,7 +15,7 @@ var index = require('./routes/index');
 
 var app = express();
 
-require('./Controllers/Passport')(passport);
+require('./auth/Passport')(passport);
 
 // view engine setup
 app.set('views', __dirname + '/views');
