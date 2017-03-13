@@ -14,6 +14,7 @@ module.exports = function(passport){
     done(null, obj);
   });
 
+  //Check the database for a user and authenticates accordingly
   passport.use('local-signin',new LocalStrategy({
         usernameField : 'username',
         passwordField : 'password',
@@ -40,6 +41,8 @@ module.exports = function(passport){
     }
   ))
 
+  //Adds a new user to the database, makes sure the username
+  //isn't already in use.
   passport.use('local-signup', new LocalStrategy({
     usernameField : 'username',
     passwordField : 'password',

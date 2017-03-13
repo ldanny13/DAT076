@@ -34,9 +34,6 @@ var Bookings = sequelize.define('Bookings',{
 
 /** creating table bookings if not exist */
 
-
 Bookings.sync({ force: true });
-
-
 
 module.exports = Bookings;

@@ -1,3 +1,5 @@
+/**Script to sort the booking table for admins*/
+
 $(document).ready(function() {
 	// Setup - add a text input to each footer cell
 	$('tfoot th').each( function () {

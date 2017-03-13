@@ -6,20 +6,18 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/bookingcss.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="javascripts/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" async></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" async></script>
+	<script type="text/javascript" src="javascripts/script.js" async></script>
 </head>
+
 <body>
 <div class="container">
 			<header>
 				<h2>Create new user</h2>
 			</header>
 		</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</body>
-</html>
 
-<body>
   <main>
     <!-- Navigation -->
     <section class="navigation">
@@ -37,28 +35,26 @@
     </section>
 
 <!--  Login form -->
-<center>
-	{{message}}
-	 <form id="local-signup"  action="/userCreation" method="post">
+	<center>
+		{{message}}
+		 <form id="local-signup"  action="/userCreation" method="post">
+		<div>
+				<p></p>
+				<label>Username:</label>
+				<input type="text" name="username"/>
+		</div>
+		<div>
+				<label>Password:</label>
+				<input type="password" name="password"/>
+		</div>
+		<div>
+				<input type="submit" class="btn btn-primary btn-sm" value="Login"/>
+		</div>
+	</form>
 	<div>
-			<p></p>
-			<label>Username:</label>
-			<input type="text" name="username"/>
+		<a href="/admin-page">Go Back</a>
 	</div>
-	<div>
-			<label>Password:</label>
-			<input type="password" name="password"/>
-	</div>
-	<div>
-			<input type="submit" class="btn btn-primary btn-sm" value="Login"/>
-	</div>
-</form>
-<div>
-	<a href="/admin-page">Go Back</a>
-</div>
 </center>
-            </div>
+</main>
   </body>
 </html>
-  </main>
-</body>

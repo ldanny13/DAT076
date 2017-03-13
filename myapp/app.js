@@ -9,14 +9,12 @@ var session = require('express-session');
 var passport = require('passport');
 var Local = require('passport-local');
 var flash = require("connect-flash");
-var models = require('./models/bookings');
 
 var index = require('./routes/index');
-var bookings = require('./routes/bookinglist');
+// bookings = require('./routes/bookinglist');
 
 var app = express();
 
-models.sync();
 require('./Controllers/Passport')(passport);
 
 // view engine setup
@@ -25,9 +23,6 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(__dirname + '/javascripts'));
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,7 +34,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/', index);
-app.use('/booklists',bookings);
+//app.use('/booklists',bookings);
 
 // Catch 404 and forward to error handler
 app.use(function(err, req, res, next) {
@@ -68,10 +63,5 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
-
-//require('./routes/index.js')(app,passport);
-
-
 
 module.exports = app;
