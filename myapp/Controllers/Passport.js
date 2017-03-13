@@ -34,6 +34,8 @@ module.exports = function(passport){
         }
 
         return done(null, false, req.flash('message','Wrong password'));
+      }).catch(function(err) {
+        console.log("Wasen't able to authenticate user");
       })
     }
   ))
@@ -58,6 +60,8 @@ module.exports = function(passport){
         password: bcrypt.hashSync(password,null,null)
       }).then(function(user) {
         return done(null, user, req.flash('message','User created'));
+      }).catch(function(err) {
+        console.log("Could not creat user");
       })
     }
   }

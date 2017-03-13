@@ -30,7 +30,9 @@ var Logins = sequelize.define('Logins',
 
 Logins.sync();
 
-//var admins = Logins.create({username: "test", password: bcrypt.hashSync("test",null,null), status: "owner"});
+var admins = Logins.create({username: "test", password: bcrypt.hashSync("test",null,null), status: "owner"}).catch(function(err) {
+   console.log("User has already been created once");
+});
 
 console.log("Created original admin");
 
