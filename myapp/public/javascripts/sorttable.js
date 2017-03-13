@@ -1,5 +1,3 @@
-/**Script to sort the booking table for admins*/
-
 $(document).ready(function() {
 	// Setup - add a text input to each footer cell
 	$('tfoot th').each( function () {
@@ -22,4 +20,18 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+    $('#booktablelist tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
+ 
+    $('#deletebtn').click( function () {
+        table.row('.selected').remove().draw( false );
+    });
 });

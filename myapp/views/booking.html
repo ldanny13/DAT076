@@ -52,7 +52,7 @@
       </button>
     </section>
 
-<form action="booklists/addbooking" method="POST" name="bookform" onsubmit="return validateBooking()">
+<form action="booklists/addbooking" method="POST" name="bookform" onsubmit="bookingconfirmed()">
 
 <fieldset class="nrofseats">
       <label for="qty">
@@ -87,7 +87,7 @@
     <!-- Confirm button -->
     <section class="confirm-book">
       <div id="bookbutton">
-      <input class="btn" type="submit" name="submit" value="Book" id="btnbook" onclick="return bookingconfirmed()">
+      <input class="btn" type="submit" name="submit" value="Book" id="btnbook" onclick="return validateBooking()">
       </div>
     </section>
 
