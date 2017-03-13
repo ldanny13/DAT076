@@ -9,13 +9,14 @@ var session = require('express-session');
 var passport = require('passport');
 var Local = require('passport-local');
 var flash = require("connect-flash");
-var relations = require("./models/relations.js");
+var models = require('./models/bookings');
 
 var index = require('./routes/index');
 var bookings = require('./routes/bookinglist');
 
 var app = express();
 
+models.sync();
 require('./Controllers/Passport')(passport);
 
 // view engine setup
@@ -39,7 +40,6 @@ app.use(flash());
 
 app.use('/', index);
 app.use('/booklists',bookings);
-
 
 // Catch 404 and forward to error handler
 app.use(function(err, req, res, next) {

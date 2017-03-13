@@ -9,7 +9,6 @@ var Bookings = sequelize.define('Bookings',{
         type: Sequelize.STRING(11),
         allowNull: false,
         primaryKey: true
-
     },
     seats: {
         type: Sequelize.INTEGER,

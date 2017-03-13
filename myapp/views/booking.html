@@ -10,16 +10,15 @@
                 $('input[id$=datepicker]').datepicker({
                   dateFormat: 'DD, d MM, yy',
                   minDate:0,
-            
+
                   });
             });
         </script>
 
-
         <script>
             $(function() {
                 //$( "#timepicker" ).timepicker();
-                $('#timepicker').timepicker({ timeFormat: 'HH:mm', 
+                $('#timepicker').timepicker({ timeFormat: 'HH:mm',
                 minTime: '09:00',
                 maxTime: '19.30'
               });
@@ -32,12 +31,10 @@
          $(':input[type=number]').on('mousewheel',function(e){ $(this).blur(); });
         });
           </script>
- 
+
           <script>
               function bookingconfirmed() {alert("Thank You for booking!");}
-          </script> 
-
-
+          </script>
 <!-- TACK -->
 
 <body>
@@ -101,8 +98,8 @@
             <div class="form-group">
               <input type="number" class="form-control" value="Phone number" placeholder="Phone number" id="contactnr" name="contactnr"/>
           <fieldset>
-                <label class="input-field-icon icon-email" for="login-nr"></label></center>   
-            </div> 
+                <label class="input-field-icon icon-email" for="login-nr"></label></center>
+            </div>
   </body>
   </fieldset>
 </html>
@@ -121,7 +118,7 @@
       <input class="btn" type="submit" name="submit" value="Book" id="btnbook" onclick="return bookingconfirmed()">
       </div>
     </section>
-    
+
 </fieldset>
 </form>
   </main>

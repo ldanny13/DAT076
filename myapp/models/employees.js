@@ -22,7 +22,7 @@ var Employees = sequelize.define('Employees',
 
 //var employees = Employees.create({employeename: "test", pnr: "199506065995", employeestatus: "owner"});
 
-//Employees.sync();
+Employees.sync();
 
 console.log("Created original admin");
 
